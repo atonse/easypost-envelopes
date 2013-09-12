@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Easypost</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+  <div class="container">
+    <div class="navbar col-lg-6">
+      <h1 class="brand">
+        <a href="/"><img alt="easypost" src="//easypost-static.s3.amazonaws.com/assets/easypost-logo-b877afa36439c8f8b6a6fab95a841b5b.png"></a>
+        <span> Envelope Generator </span>
+      </h1>
+
+      <ul class="nav pull-right">
+        <li class="">
+          <a href="/about"><span>About</span></a>
+        </li>
+        <li class="">
+          <a href="/dashboard/shipments"> <span> Dashboard </span> </a>
+        </li>
+        <li class="active">
+          <a href="/account/keys"> <span> Account </span> </a>
+        </li>
+        <li class="">
+          <a href="/signout"> <span> Sign out </span> </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<%= javascript_include_tag "application" %>
+</body>
+</html>

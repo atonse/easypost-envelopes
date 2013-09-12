@@ -1,0 +1,46 @@
+body {
+  background: #f5f5f5 url(//easypost-static.s3.amazonaws.com/assets/top-stripe-cc6d9c2995489874015ed1aba72bc214.jpg) repeat-x top;
+
+  padding-top: 40px;
+  color: #8c8c8c;
+  font-family: proxima-nova, sans-serif;
+}
+
+.container-inner.shadowed {
+  -webkit-box-shadow: 0px 0px 8px #cacaca;
+  -moz-box-shadow: 0px 0px 8px #cacaca;
+  box-shadow: 0px 0px 8px #cacaca;
+}
+
+.navbar {
+  color: #497f99;
+
+  .brand {
+    float: left;
+    display: block;
+    padding: 10px 20px 10px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #497f99;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  h1.brand {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+    line-height: 50px;
+
+
+    span {
+      font-size: 14px;
+      color: #9ab6c3;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-shadow: none;
+    }
+  }
+
+}
