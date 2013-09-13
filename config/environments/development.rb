@@ -36,4 +36,6 @@ Easypost::Application.configure do
   config.assets.debug = true
 
   config.ember.variant = :development # or :production
+
+  EasyPost.api_key = 'YRVBWs_KJk3qmXvv_N-xAg'
 end

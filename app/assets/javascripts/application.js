@@ -18,3 +18,10 @@
 // for more details see: http://emberjs.com/guides/application/
 Easypost = Ember.Application.create();
 
+$(document).ready(function() {
+  token = $('meta[name="csrf-token"]').attr('content')
+  $.ajaxPrefilter(function(options, originalOptions, xhr) {
+    xhr.setRequestHeader('X-CSRF-Token', token);
+  });
+});
+

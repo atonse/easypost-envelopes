@@ -14,10 +14,10 @@
   color: rgb(63, 117, 143);
   width: 200px;
   clear: right;
-  display: block;
   outline: none;
   padding: 4px;
   padding-bottom: 0;
+  display: block;
 }
 
 .envelope.shadowed {
@@ -44,7 +44,19 @@
   box-shadow: 0px -1px 0px #dcdcdc;
 }
 
+#rates td {
+  width: 80px;
+  border-bottom: 1px solid rgba(73, 127, 153, 0.3);
+  border-top: 1px solid rgba(73, 127, 153, 0.3);
+}
 
+#rates td:nth-child(1) {
+  width: 140px;
+}
+
+#rates td:nth-child(2), #rates td:nth-child(3) {
+  text-align: right;
+}
 
 /* ------------------------------------------------------------------ Envelope Sizes */
 
@@ -55,34 +67,75 @@
 .com-10 {
   width: 900px;
   height: 392px;
-}
 
-.com-10 .from-address {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
+  .from-address {
+    position: absolute;
+    top: 30px;
+    left: 30px;
 
-.com-10 .to-address {
-  position: absolute;
-  top: 170px;
-  left: 270px;
-  width: 350px;
-}
+    input.address-city {
+      width: 200px;
+      display: inline-block;
+    }
 
-.com-10 .to-address input {
-  width: 340px;
-  font-size: 110%;
-}
+    input.address-state {
+      width: 43px;
+      text-align: center;
+      display: inline-block;
+    }
 
-.com-10 .postage {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 30px;
-  right: 30px;
-  border: 1px solid black;
-  text-align: center;
-  color: rgb(63, 117, 143);
-  padding-top: 16px;
+    input.address-zip {
+      width: 89px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    input {
+      line-height: normal;
+      font-size: 90%;
+    }
+  }
+
+  .to-address {
+    position: absolute;
+    top: 170px;
+    left: 270px;
+    width: 350px;
+
+
+    input.address-city {
+      width: 200px;
+      display: inline-block;
+    }
+
+    input.address-state {
+      width: 43px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    input.address-zip {
+      width: 89px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    input {
+      line-height: normal;
+      width: 340px;
+      font-size: 110%;
+    }
+  }
+
+  .postage {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 30px;
+    right: 30px;
+    border: 1px solid black;
+    text-align: center;
+    color: rgb(63, 117, 143);
+    padding-top: 16px;
+  }
 }

@@ -1,0 +1,12 @@
+{{input type="text" value=name class="address-name" placeholder=namePlaceholder}}
+{{input type="text" value=street1 class="address-street1" placeholder="Address"}}
+{{input type="text" value=city class="address-city" placeholder="City"}}
+{{input type="text" value=state class="address-state" placeholder="State"}}
+{{input type="text" value=zip class="address-zip" placeholder="Zip"}}
+{{input type="text" value=country class="address-country" placeholder="Country"}}
+{{#if isVerified}}
+  <span class="glyphicon glyphicon-check"></span>Verified
+{{else}}
+  <a {{action 'verify' }} class="verification-result" href="#">Verify</a>
+{{/if}}
+{{verificationMessage}}

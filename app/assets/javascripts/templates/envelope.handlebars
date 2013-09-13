@@ -2,43 +2,44 @@
   <div id="envelope-container">
     <div class="envelope com-10 shadowed">
       <div class="address from-address">
-        {{input type="text" value=senderName placeholder="Sender Name"}}
-        {{input type="text" value=senderAddress1 placeholder="Address"}}
-        {{input type="text" value=senderCity placeholder="City"}}
-        {{input type="text" value=senderState placeholder="State"}}
-        {{input type="text" value=senderZip placeholder="Zip"}}
-        {{#if senderVerified}}
-          <span class="glyphicon glyphicon-check"></span>Verified
-        {{else}}
-          <a {{action 'verify' }} class="verification-result" href="#">Verify</a>
-        {{/if}}
+        {{render "address" fromAddress}}
       </div>
 
       <div class="address to-address">
-        {{input type="text" value=recipientName placeholder="Recipient Name"}}
-        {{input type="text" value=recipientAddress1 placeholder="Address"}}
-        {{input type="text" value=recipientCity placeholder="City"}}
-        {{input type="text" value=recipientState placeholder="State"}}
-        {{input type="text" value=recipientZip placeholder="Zip"}}
-        {{#if recipientVerified}}
-          <span class="glyphicon glyphicon-check"></span>Verified
-        {{else}}
-          <a {{action 'verify' }} class="verification-result" href="#">Verify</a>
-        {{/if}}
+        {{render "address" toAddress}}
       </div>
 
       <div class="postage">
-        <a href="#">Estimate Postage</a>
+        {{#if shipment.selectedRate}}
+          ${{shipment.selectedRate.rate}}
+        {{else}}
+          <a href="#" {{action 'estimatePostage' }}>Estimate Postage</a>
+        {{/if}}
       </div>
     </div>
   </div>
   <div id="instructions-container">
-    <strong>Instructions</strong>
-    <ol>
-      <li>Fill in the sender's address</li>
-      <li>Fill in the receiver's address</li>
-      <li>Choose transit time and buy postage</li>
-    </ol>
+    {{#if shipment.rates}}
+      <h4>Available Rates</h4>
+      <table id="rates">
+        <tbody>
+          {{#each rate in shipment.rates}}
+            <tr>
+              <td>{{rate.carrier}} {{rate.service}}</td>
+              <td><strong>${{rate.rate}}</strong></td>
+              <td><a {{action 'buy' rate }} href="#">Buy</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <h4>Instructions</h4>
+      <ol>
+        <li>Fill in the sender's address</li>
+        <li>Fill in the receiver's address</li>
+        <li>Choose price and buy postage</li>
+      </ol>
+    {{/if}}
   </div>
 </div>
 <div class="row">
