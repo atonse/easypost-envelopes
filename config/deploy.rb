@@ -24,7 +24,7 @@ after 'deploy:symlink', 'deploy:cleanup'            # makes sure there's only 3 
 
 namespace :custom do
   task :bundle do
-    run "bundle install --gemfile #{current_path}/Gemfile --path #{deploy_to}/shared/vendor_bundle --deployment --without assets development test"
+    run "bundle install --gemfile #{current_path}/Gemfile --path #{deploy_to}/shared/vendor_bundle --deployment --without development test"
   end
 end
 
