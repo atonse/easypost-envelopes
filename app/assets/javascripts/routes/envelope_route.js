@@ -5,7 +5,7 @@ Easypost.EnvelopeRoute = Ember.Route.extend({
     blankFromAddress = Easypost.Address.create({ namePlaceholder: 'Sender Name' });
     blankToAddress = Easypost.Address.create({ namePlaceholder: 'Recipient Name' });
 
-    testFromAddress = Easypost.Address.create({
+    testToAddress = Easypost.Address.create({
       namePlaceholder: 'Sender Name',
       name: 'Ashish Tonse',
       street1: '5225 Pooks Hill Rd #1722S',
@@ -14,10 +14,10 @@ Easypost.EnvelopeRoute = Ember.Route.extend({
       zip: '20814' 
     });
 
-    testToAddress = Easypost.Address.create({
+    testFromAddress = Easypost.Address.create({
       namePlaceholder: 'Recipient Name',
       name: 'EasyPost',
-      street1: '2135 Sacramento St',
+      street1: '2135 Sacramento St Apt 209',
       city: 'San Francisco',
       state: 'CA',
       zip: '94109' 
@@ -30,10 +30,10 @@ Easypost.EnvelopeRoute = Ember.Route.extend({
     });
 
     //controller.set('fromAddress', blankFromAddress);
-    //controller.set('toAddress', blankToAddress);
+    controller.set('toAddress', blankToAddress);
 
     controller.set('fromAddress', testFromAddress);
-    controller.set('toAddress', testToAddress);
+    //controller.set('toAddress', testToAddress);
   }
 });
 
