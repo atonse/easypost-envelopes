@@ -4,6 +4,8 @@ Easypost.EnvelopeController = Ember.ObjectController.extend({
   parcel: null,
   shipment: null,
 
+  someAddressesUnverified: true,
+
   actions: {
     estimatePostage: function() {
       var shipment = Easypost.Shipment.create({
@@ -13,7 +15,7 @@ Easypost.EnvelopeController = Ember.ObjectController.extend({
       });
 
       this.set('shipment', shipment);
-      shipment.save().then(function(shipment) { console.log(shipment.get('rates')); });
+      shipment.save();
     },
 
     buy: function(rate) {

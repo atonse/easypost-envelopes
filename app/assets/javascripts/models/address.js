@@ -7,6 +7,7 @@ Easypost.Address = Ember.Object.extend({
   city: null,
   state: null,
   zip: null,
+  phone: '999-999-9999',
   country: 'US',
 
   isVerified: false,
@@ -32,12 +33,18 @@ Easypost.Address = Ember.Object.extend({
         city: this.get('city'),
         state: this.get('state'),
         zip: this.get('zip'),
+        phone: this.get('phone'),
         country: this.get('country')
       }
     }).then(function(result) {
       self.setProperties(result);
-      self.set('verificationMessage', result.message);
-      self.set('isVerified', true);
+      if (result.message) {
+        self.set('verificationMessage', result.message);
+        self.set('isVerified', false);
+      } else {
+        self.set('verificationMessage', '');
+        self.set('isVerified', true);
+      }
     });
   }
 });

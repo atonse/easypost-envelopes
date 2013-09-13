@@ -58,6 +58,18 @@
   text-align: right;
 }
 
+li.completed {
+  font-weight: bolder;
+
+  span {
+    display: inline-block;
+  }
+}
+
+li.not-completed span {
+  display: none;
+}
+
 /* ------------------------------------------------------------------ Envelope Sizes */
 
 
@@ -133,9 +145,19 @@
     height: 80px;
     top: 30px;
     right: 30px;
-    border: 1px solid black;
+    border: 1px solid rgb(63, 117, 143);
     text-align: center;
     color: rgb(63, 117, 143);
-    padding-top: 16px;
+
+    a {
+      margin-top: 16px;
+      display: inline-block;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
   }
+
 }

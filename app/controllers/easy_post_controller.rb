@@ -1,7 +1,7 @@
 class EasyPostController < ApplicationController
   def verify
     begin
-      address = EasyPost::Address.create(params.slice(:name, :street1, :street2, :city, :state, :zip, :country))
+      address = EasyPost::Address.create(params.slice(:name, :street1, :street2, :city, :state, :phone, :zip, :country))
       verified_address = address.verify()
       render json: verified_address
     rescue EasyPost::Error => ex
@@ -28,6 +28,16 @@ class EasyPostController < ApplicationController
     )
 
     render json: shipment
+  end
+
+  def barcode
+    shipment = EasyPost::Shipment.retrieve(params[:id])
+    redirect_to shipment.barcode
+  end
+
+  def stamp
+    shipment = EasyPost::Shipment.retrieve(params[:id])
+    redirect_to shipment.stamp
   end
 
   def buy

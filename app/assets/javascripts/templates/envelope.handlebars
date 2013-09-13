@@ -10,8 +10,8 @@
       </div>
 
       <div class="postage">
-        {{#if shipment.selectedRate}}
-          ${{shipment.selectedRate.rate}}
+        {{#if shipment.stamp}}
+          <img {{bind-attr src="shipment.stamp"}}/>
         {{else}}
           <a href="#" {{action 'estimatePostage' }}>Estimate Postage</a>
         {{/if}}
@@ -19,6 +19,13 @@
     </div>
   </div>
   <div id="instructions-container">
+    <h4>Instructions</h4>
+    <ol>
+      <li {{bind-attr class="fromAddress.isVerified:completed:not-completed"}}><span class="glyphicon glyphicon-check"></span> Fill in the sender's address</li>
+      <li {{bind-attr class="toAddress.isVerified:completed:not-completed"}}><span class="glyphicon glyphicon-check"></span> Fill in the receiver's address</li>
+      <li {{bind-attr class="shipment.postageLabel:completed:not-completed"}}><span class="glyphicon glyphicon-check"></span> Estimate and buy postage</li>
+      <li>Generate PDF of Envelope to Print! (to be built)</li>
+    </ol>
     {{#if shipment.rates}}
       <h4>Available Rates</h4>
       <table id="rates">
@@ -32,13 +39,6 @@
           {{/each}}
         </tbody>
       </table>
-    {{else}}
-      <h4>Instructions</h4>
-      <ol>
-        <li>Fill in the sender's address</li>
-        <li>Fill in the receiver's address</li>
-        <li>Choose price and buy postage</li>
-      </ol>
     {{/if}}
   </div>
 </div>

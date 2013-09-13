@@ -9,6 +9,8 @@ Easypost.Shipment = Ember.Object.extend({
   rates: null,
 
   postageLabel: null,
+  stamp: null,
+  barcode: null,
 
   selectedRate: null,
 
@@ -32,11 +34,14 @@ Easypost.Shipment = Ember.Object.extend({
         }
       }).then(function(result) {
         self.set('postageLabel', result);
-        resolve(self.get('postageLabel'));
+        self.set('stamp', '/shipment/' + self.get('id') + '/stamp');
+        self.set('barcode', '/shipment/' + self.get('id') + '/barcode');
+        self.set('rates', undefined);
+        resolve(self);
       });
     });
-
   },
+
   save: function() {
     var self = this;
 

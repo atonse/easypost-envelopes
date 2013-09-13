@@ -5,7 +5,7 @@
 {{input type="text" value=zip class="address-zip" placeholder="Zip"}}
 {{input type="text" value=country class="address-country" placeholder="Country"}}
 {{#if isVerified}}
-  <span class="glyphicon glyphicon-check"></span>Verified
+  <span class="glyphicon glyphicon-check"></span> Verified
 {{else}}
   <a {{action 'verify' }} class="verification-result" href="#">Verify</a>
 {{/if}}
