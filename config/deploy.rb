@@ -1,7 +1,7 @@
 default_run_options[:pty] = true
 set :application,   'easypost.tonse.com'
 set :domain,        'easypost.tonse.com'
-set :server_domain, 'localopus.com'
+set :server_domain, 'easypost.tonse.com'
 set :repository,    'git@bitbucket.org:atonse/easypost-envelopes.git'
 set :branch,        'master'
 set :scm,           :git
