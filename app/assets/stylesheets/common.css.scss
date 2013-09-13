@@ -6,12 +6,6 @@ body {
   font-family: proxima-nova, sans-serif;
 }
 
-.container-inner.shadowed {
-  -webkit-box-shadow: 0px 0px 8px #cacaca;
-  -moz-box-shadow: 0px 0px 8px #cacaca;
-  box-shadow: 0px 0px 8px #cacaca;
-}
-
 .navbar {
   color: #497f99;
 
@@ -43,4 +37,17 @@ body {
     }
   }
 
+}
+
+.btn-red {
+  text-transform: uppercase;
+  color: #fff;
+  background: #c16a59;
+  border-color: #c16a59;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+  font-weight: bold;
+  font-size: 16px;
 }

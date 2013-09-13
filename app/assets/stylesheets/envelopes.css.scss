@@ -1,3 +1,88 @@
-.com-10 {
+#envelope-container {
+  float: left;
+  width: 900px;
+}
 
+#instructions-container {
+  float: right;
+  width: 250px;
+}
+
+.envelope input {
+  border: 0;
+  border-bottom: 1px solid rgba(73,127,153,0.3);
+  color: rgb(63, 117, 143);
+  width: 200px;
+  clear: right;
+  display: block;
+  outline: none;
+  padding: 4px;
+  padding-bottom: 0;
+}
+
+.envelope.shadowed {
+  -webkit-box-shadow: 0px 0px 8px #cacaca;
+  -moz-box-shadow: 0px 0px 8px #cacaca;
+  box-shadow: 0px 0px 8px #cacaca;
+}
+
+.envelope {
+  margin-bottom: 20px;
+  padding: 30px;
+  background-color: #fff;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  position: relative;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px -1px 0px #dcdcdc;
+  -moz-box-shadow: 0px -1px 0px #dcdcdc;
+  box-shadow: 0px -1px 0px #dcdcdc;
+}
+
+
+
+/* ------------------------------------------------------------------ Envelope Sizes */
+
+
+/* -------------------------------------------------------------------------- COM 10 */
+/* 4.125in x 9.5 in */
+/* ratio 2.3:1 */
+.com-10 {
+  width: 900px;
+  height: 392px;
+}
+
+.com-10 .from-address {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.com-10 .to-address {
+  position: absolute;
+  top: 170px;
+  left: 270px;
+  width: 350px;
+}
+
+.com-10 .to-address input {
+  width: 340px;
+  font-size: 110%;
+}
+
+.com-10 .postage {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 30px;
+  right: 30px;
+  border: 1px solid black;
+  text-align: center;
+  color: rgb(63, 117, 143);
+  padding-top: 16px;
 }

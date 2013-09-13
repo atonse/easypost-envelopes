@@ -10,6 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require_self
+//= require easypost
+
+// for more details see: http://emberjs.com/guides/application/
+Easypost = Ember.Application.create();
+

@@ -1,3 +1,42 @@
-<div class="envelope-com10 shadowed">
+<div class="row">
+  <div id="envelope-container">
+    <div class="envelope com-10 shadowed">
+      <div class="address from-address">
+        <input type="text" name="sender_name" placeholder="Sender Name" value="Ashish Tonse">
+        <input type="text" name="address1" placeholder="Address1" value="5225 Pooks Hill Rd #1722S">
+        <input type="text" name="city" placeholder="City" value="Bethesda">
+        <input type="text" name="state" placeholder="State" value="MD">
+        <input type="text" name="zip" placeholder="Zip" value="20814">
+        <a class="verification-result" href="/verify">Verify</a>
+      </div>
 
+      <div class="address to-address">
+        <input type="text" name="recipient_name" placeholder="Recipient Name" value="EasyPost">
+        <input type="text" name="address1" placeholder="Address1" value="2135 Sacramento St">
+        <input type="text" name="city" placeholder="City" value="San Francisco">
+        <input type="text" name="state" placeholder="State" value="CA">
+        <input type="text" name="zip" placeholder="Zip" value="94109">
+        <a class="verification-result" href="/verify">Verify</a>
+      </div>
+
+      <div class="postage">
+        <a href="#">Estimate Postage</a>
+      </div>
+    </div>
+  </div>
+  <div id="instructions-container">
+    <strong>Instructions</strong>
+    <ol>
+      <li>Fill in the sender's address</li>
+      <li>Fill in the receiver's address</li>
+      <li>Choose transit time and buy postage</li>
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-offset-5">
+    <div class="col-lg-2">
+      <button type="button" disabled class="btn btn-lg btn-red">Print</button>
+    </div>
+  </div>
 </div>

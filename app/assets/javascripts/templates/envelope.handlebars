@@ -1,0 +1,51 @@
+<div class="row">
+  <div id="envelope-container">
+    <div class="envelope com-10 shadowed">
+      <div class="address from-address">
+        {{input type="text" value=senderName placeholder="Sender Name"}}
+        {{input type="text" value=senderAddress1 placeholder="Address"}}
+        {{input type="text" value=senderCity placeholder="City"}}
+        {{input type="text" value=senderState placeholder="State"}}
+        {{input type="text" value=senderZip placeholder="Zip"}}
+        {{#if senderVerified}}
+          <span class="glyphicon glyphicon-check"></span>Verified
+        {{else}}
+          <a {{action 'verify' }} class="verification-result" href="#">Verify</a>
+        {{/if}}
+      </div>
+
+      <div class="address to-address">
+        {{input type="text" value=recipientName placeholder="Recipient Name"}}
+        {{input type="text" value=recipientAddress1 placeholder="Address"}}
+        {{input type="text" value=recipientCity placeholder="City"}}
+        {{input type="text" value=recipientState placeholder="State"}}
+        {{input type="text" value=recipientZip placeholder="Zip"}}
+        {{#if recipientVerified}}
+          <span class="glyphicon glyphicon-check"></span>Verified
+        {{else}}
+          <a {{action 'verify' }} class="verification-result" href="#">Verify</a>
+        {{/if}}
+      </div>
+
+      <div class="postage">
+        <a href="#">Estimate Postage</a>
+      </div>
+    </div>
+  </div>
+  <div id="instructions-container">
+    <strong>Instructions</strong>
+    <ol>
+      <li>Fill in the sender's address</li>
+      <li>Fill in the receiver's address</li>
+      <li>Choose transit time and buy postage</li>
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-offset-5">
+    <div class="col-lg-2">
+      <button type="button" disabled class="btn btn-lg btn-red">Print</button>
+    </div>
+  </div>
+</div>
+

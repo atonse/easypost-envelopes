@@ -20,9 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
 gem 'easypost'
+
+gem 'ember-rails'
+gem 'ember-source', '1.0.0' # or the version you need
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
